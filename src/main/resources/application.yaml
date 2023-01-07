@@ -1,0 +1,47 @@
+server:
+  port: 8045
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:postgresql://lotrel-do-user-9999349-0.b.db.ondigitalocean.com:25060/defaultdb?currentSchema=lotrel
+    username: doadmin
+    password: AVNS_QPS8VCqR8pLaDo_QA9k
+  jpa:
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 429087801332-568u5ehbi90k5ap6ou539kr3q9u690jv.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+  thymeleaf:
+    prefix: classpath:/mail/templates/
+    suffix: .html
+    mode: HTML5
+
+springdoc:
+  paths-To-Match: /api/**
+
+
+lotrel-mail:
+  address: lotrel.klient@gmail.com
+  password: dzeqwvikkdwssqbo
+  host: smtp.gmail.com
+  port: 587
+  templates: mail/templates
+
+lotrel-security:
+  secret: adfsdadasd
+  expiration: 3600
+  redirectUrls:
+    http://wp.pl, http://google.pl
+
+
+
