@@ -15,7 +15,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     Optional<Task> findByIdAndDeletedFalse(long id);
 
-    List<Task> findByTaskAndDeletedFalseAndIdIn(Set<String> taskId, Sort sort);
+    List<Task> findByDeletedFalseAndTaskIdIn(Set<String> taskId, Sort sort);
 
     List<Task> findAllBySprintAndDeletedFalse(Sprint sprint, Sort sort);
 

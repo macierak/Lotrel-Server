@@ -105,7 +105,7 @@ public class TaskService {
     }
 
     public List<Task> getSortedTasksList(Set<String> taskSkus, String orderBy, SortDirection sortDirection) {
-        return taskRepository.findByTaskAndDeletedFalseAndIdIn(taskSkus, Sort.by(sortDirection.toString(), orderBy));
+        return taskRepository.findByDeletedFalseAndTaskIdIn(taskSkus, Sort.by(sortDirection.toString(), orderBy));
     }
 
     public List<Task> getSortedTasksListWithSprint(long sprintId, String orderBy, SortDirection sortDirection) {
